@@ -1,0 +1,15 @@
+<Project>
+	
+	<PropertyGroup Condition="'$(Version)' == ''">
+		<Version Condition="'$(VersionSuffix)' != ''">$(VersionPrefix)-$(VersionSuffix)</Version>
+		<Version Condition="'$(Version)' == ''">$(VersionPrefix)</Version>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageVersion>$(Version)</PackageVersion>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(GITHUB_RUN_ID)' != ''">
+		<PackageVersion Condition="'$(GITHUB_SHA)' != ''">$(PackageVersion)+$(GITHUB_SHA)</PackageVersion>
+	</PropertyGroup>
+</Project>

@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<LangVersion>preview</LangVersion>
+		<Nullable>annotations</Nullable>
+		
+		<RootNamespace>Microsoft.Extensions.DependencyInjection.AutoServices</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>Sl4vP0weR.AutoServices</PackageId>
+		
+		<Title>AutoServices</Title>
+		<Description>Microsoft Dependency Injection services auto registration.</Description>
+		
+		<Authors>Sl4vP0weR</Authors>
+		<RepositoryUrl>https://github.com/Sl4vP0weR/AutoServices</RepositoryUrl>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<PackageOutputPath>$(ProjectDir)../artifacts/</PackageOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="*" />
+		<PackageReference Include="PolySharp" Version="*" />
+	</ItemGroup>
+	
+</Project>

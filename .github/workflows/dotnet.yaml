@@ -1,0 +1,52 @@
+name: .NET
+
+on: [push, pull_request]
+
+env:
+  EXCLUDE_RUN_ID_FROM_PACKAGE: false
+  EXCLUDE_SUFFIX_FROM_VERSION: false
+
+jobs:
+
+  build-solution:
+    strategy:
+        matrix:
+          configuration: [Debug, Release]
+    runs-on: windows-2022
+    steps:
+    - name: Git checkout
+      uses: actions/checkout@v3
+    - name: Build
+      run: dotnet build -c ${{matrix.configuration}} /bl
+    - name: Upload MSBuild binary log
+      uses: actions/upload-artifact@v3
+      with:
+        name: msbuild_log_${{matrix.configuration}}
+        path: msbuild.binlog
+        if-no-files-found: error
+
+  # Run tests
+  run-tests:
+    if: success()
+    needs: [build-solution]
+    runs-on: windows-2022
+    steps:
+    - name: Git checkout
+      uses: actions/checkout@v3
+    - name: Run tests
+      run: dotnet test -c Release
+
+  # Build the projects to generate all the NuGet packages
+  build-packages:
+    runs-on: windows-2022
+    steps:
+    - name: Git checkout
+      uses: actions/checkout@v3
+    - name: Build package
+      run: dotnet build AutoServices.sln -c Release
+    - name: Upload package artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: nuget_packages
+        path: artifacts\*.nupkg
+        if-no-files-found: error

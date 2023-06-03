@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33706.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoServices", "src\AutoServices.csproj", "{C632E5F7-A6A4-4BAB-A75C-EDE6D93FC869}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoServices.Tests", "tests\AutoServices.Tests.csproj", "{B9FDEFD2-3B7B-4464-B36B-BCF91BE4CF26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{48408DE4-CF8B-4EA5-888A-69665996B461}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Directory.Build.targets = Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{0065FD60-438F-4AB0-92C4-849D91678CC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{F6F76DE9-4F1C-4753-93F9-CB0434847EC9}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yaml = .github\workflows\dotnet.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C632E5F7-A6A4-4BAB-A75C-EDE6D93FC869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C632E5F7-A6A4-4BAB-A75C-EDE6D93FC869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C632E5F7-A6A4-4BAB-A75C-EDE6D93FC869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C632E5F7-A6A4-4BAB-A75C-EDE6D93FC869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9FDEFD2-3B7B-4464-B36B-BCF91BE4CF26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9FDEFD2-3B7B-4464-B36B-BCF91BE4CF26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9FDEFD2-3B7B-4464-B36B-BCF91BE4CF26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9FDEFD2-3B7B-4464-B36B-BCF91BE4CF26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0065FD60-438F-4AB0-92C4-849D91678CC0} = {48408DE4-CF8B-4EA5-888A-69665996B461}
+		{F6F76DE9-4F1C-4753-93F9-CB0434847EC9} = {0065FD60-438F-4AB0-92C4-849D91678CC0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62BD273E-5731-4646-8276-1CA40C071102}
+	EndGlobalSection
+EndGlobal
