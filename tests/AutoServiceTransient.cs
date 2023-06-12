@@ -1,6 +1,6 @@
 ﻿namespace AutoServices.Tests;
 
-[Lifetime(ServiceLifetime.Transient)]
+[Service(Lifetime = ServiceLifetime.Transient)]
 internal class AutoServiceTransient : ITestAutoService
 {
 }

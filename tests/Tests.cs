@@ -27,6 +27,7 @@ public class Tests
     [TestCase(typeof(AutoServiceTransient))]
     [TestCase(typeof(AutoServiceScoped))]
     [TestCase(typeof(AutoServiceGeneric))]
+    [TestCase(typeof(AutoServiceStruct))]
     public void Registered(Type type)
     {
         Assert.IsNotNull(services.GetService(type), "Service `{0}` is not registered.", type);

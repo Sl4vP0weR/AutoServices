@@ -11,19 +11,11 @@ public static class Extensions
     /// <summary>
     /// Retrieves generic type definition from <paramref name="type"/> and returns it if exists, otherwise returns <paramref name="type"/>.
     /// </summary>
-    /// <param name="type"></param>
+    /// <param name="type" />
     public static Type GetGenericDefinition(this Type type) =>
         !type.IsGenericTypeDefinition && type.IsGenericType ?
         type.GetGenericTypeDefinition() :
         type;
-
-    public static IList<T> AsList<T>(this IEnumerable<T> enumerable)
-    {
-        if (enumerable is IList<T> list)
-            return list;
-
-        return enumerable.ToList();
-    }    
 
     public static bool IsAssignableFromNonInstance(this Type @this, Type from)
     {

@@ -1,6 +1,6 @@
 ﻿namespace AutoServices.Tests;
 
-[Lifetime(ServiceLifetime.Scoped)]
+[Service(Lifetime = ServiceLifetime.Scoped)]
 internal class AutoServiceScoped : ITestAutoService
 {
 }
